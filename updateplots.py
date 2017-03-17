@@ -113,7 +113,7 @@ def updateInfo(plots, infoFile):
             if plot["number"] == newDic["number"]:
                 plot.update(newDic)
                 if newDic.get("zone") or newDic.get("empty"):
-                    plot.update({"color":getColor(newDic["zone"], plot.get("open", "no"))})
+                    plot.update({"color":getColor(newDic.get("zone", plot.get("zone", "residential")), newDic.get("empty", plot.get("empty", "no")))})
 
 def main():
     options = get_options()
